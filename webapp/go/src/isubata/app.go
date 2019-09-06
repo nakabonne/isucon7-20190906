@@ -12,6 +12,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 	"strconv"
 	"strings"
@@ -721,6 +722,11 @@ func tRange(a, b int64) []int64 {
 }
 
 func main() {
+	// NOTE: pprof
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+
 	e := echo.New()
 	funcs := template.FuncMap{
 		"add":    tAdd,
