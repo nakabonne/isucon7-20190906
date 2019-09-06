@@ -30,7 +30,7 @@ echo ""
 #sudo systemctl daemon-reload
 cd webapp/go/
 make
-sudo systemctl restart systemd.go.service
+sudo systemctl restart isubata.golang.service
 echo "$(tput setaf 2)application reload Succeeded! $(tput sgr0)"
 echo ""
 
