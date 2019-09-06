@@ -27,7 +27,7 @@ restart-mysql:
 	sudo /etc/init.d/mysql restart
 
 pprof:
-	go tool pprof /home/isucon/isubata/webapp/go/src/isubata/  http://localhost:6060/debug/pprof/profile
+	go tool pprof -http="0.0.0.0:8081" /home/isucon/isubata/webapp/go/src/isubata/  http://localhost:6060/debug/pprof/profile
 
 syslog:
 	sudo journalctl -e -u systemd.go.service
