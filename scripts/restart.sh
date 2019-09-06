@@ -7,7 +7,7 @@ echo "$(tput setaf 2)Pull Succeeded! $(tput sgr0)"
 echo ""
 
 # reverse proxy reload
-sudo cp filis/app/nginx.conf /etc/nginx/nginx.conf
+sudo cp files/app/nginx.conf /etc/nginx/nginx.conf
 sudo /usr/sbin/nginx -t
 sudo service nginx reload
 echo "$(tput setaf 2)reverse proxy reload Succeeded! $(tput sgr0)"
